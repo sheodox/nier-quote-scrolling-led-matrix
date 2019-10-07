@@ -22,14 +22,9 @@ int quotesChars = sizeof(quotes) / sizeof(quotes[0]);
 RGBmatrixPanel matrix(A, B, C, CLK, LAT, OE, false);
 const int CHAR_WIDTH = 6;
 const int CHARS_PER_LINE = 6;
-const int MARQUEE_DELAY = 150; //ms before scrolling a character off screen
-String paddingBeforeQuote = "";
-String displayText = "";
+const int MARQUEE_DELAY = 75; //ms before scrolling a character off screen
 
 void setup() {
-  for (int i = 0; i < CHARS_PER_LINE; i++) {
-    paddingBeforeQuote += " ";
-  }
   matrix.begin();
   Serial.begin(9600);
   matrix.setTextColor(matrix.Color333(1, 0, 0));
